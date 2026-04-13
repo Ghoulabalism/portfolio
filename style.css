@@ -204,7 +204,6 @@ nav a.active, nav a:hover {
     width: 320px;
     height: 400px;
     object-fit: cover;
-    filter: grayscale(100%);
 }
 
 /* Hero contact — icon + stacked label/value */
