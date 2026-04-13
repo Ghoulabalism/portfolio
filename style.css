@@ -80,37 +80,7 @@ img {
     transform: translateY(1px);
 }
 
-.hero-contact {
-    display: flex;
-    flex-direction: column; /* Stacked vertically to look clean next to the text */
-    gap: 12px;
-    margin-top: 20px;
-}
-
-.contact-link {
-    font-size: 0.95rem;
-    color: var(--text-muted);
-    transition: color 0.2s ease;
-    display: inline-block;
-    width: fit-content;
-}
-
-.contact-link strong {
-    color: var(--text-main);
-    margin-right: 5px;
-}
-
-.contact-link:hover {
-    color: var(--primary-color); /* Turns your brand green on hover */
-    text-decoration: underline;
-}
-
-/* On mobile, center them if the hero is centered */
-@media (max-width: 768px) {
-    .hero-contact {
-        align-items: center;
-    }
-}
+/* hero-contact styles now defined in Hero Section above */
 
 .btn-sm {
     padding: 8px 20px;
@@ -180,6 +150,7 @@ nav a.active, nav a:hover {
 /* --- Hero Section --- */
 .hero {
     padding: 100px 0 80px 0;
+    background: radial-gradient(ellipse at 80% 0%, #d4f5e6 0%, transparent 55%);
 }
 
 .hero-grid {
@@ -200,12 +171,32 @@ nav a.active, nav a:hover {
     margin-bottom: 10px;
 }
 
-.hero-subtitle {
-    font-size: 1.25rem;
-    color: var(--text-muted);
-    margin-bottom: 30px;
+.name-dark {
+    color: var(--text-main);
 }
 
+.name-green {
+    color: var(--primary-color);
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+}
+
+.hero-bio {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 28px;
+    max-width: 480px;
+}
+
+.hero-bio strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
 
 .hero-image img {
     border-radius: 24px;
@@ -213,6 +204,70 @@ nav a.active, nav a:hover {
     width: 320px;
     height: 400px;
     object-fit: cover;
+    filter: grayscale(100%);
+}
+
+/* Hero contact — icon + stacked label/value */
+.hero-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-muted);
+    transition: color 0.2s ease;
+    width: fit-content;
+}
+
+.contact-link:hover {
+    color: var(--primary-color);
+}
+
+.contact-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    flex-shrink: 0;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.contact-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--text-light);
+    text-transform: uppercase;
+}
+
+.contact-value {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+}
+
+.contact-link:hover .contact-value {
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .hero-contact {
+        align-items: flex-start;
+    }
 }
 
 /* --- Intro/About Section --- */
@@ -546,3 +601,4 @@ footer {
     .skill-cloud span { padding: 8px 15px; font-size: 0.75rem; }
     .footer-content { flex-direction: column; align-items: center; gap: 15px; text-align: center;}
 }
+
