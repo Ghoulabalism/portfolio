@@ -80,23 +80,36 @@ img {
     transform: translateY(1px);
 }
 
-.btn-primary {
-    background-color: var(--primary-color);
-    color: white;
+.hero-contact {
+    display: flex;
+    flex-direction: column; /* Stacked vertically to look clean next to the text */
+    gap: 12px;
+    margin-top: 20px;
 }
 
-.btn-primary:hover {
-    background-color: #0d5635;
+.contact-link {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    transition: color 0.2s ease;
+    display: inline-block;
+    width: fit-content;
 }
 
-.btn-secondary {
-    background-color: white;
-    color: var(--secondary-text);
-    border: 1px solid var(--border-color);
+.contact-link strong {
+    color: var(--text-main);
+    margin-right: 5px;
 }
 
-.btn-secondary:hover {
-    background-color: #F7FAFC;
+.contact-link:hover {
+    color: var(--primary-color); /* Turns your brand green on hover */
+    text-decoration: underline;
+}
+
+/* On mobile, center them if the hero is centered */
+@media (max-width: 768px) {
+    .hero-contact {
+        align-items: center;
+    }
 }
 
 .btn-sm {
@@ -193,10 +206,6 @@ nav a.active, nav a:hover {
     margin-bottom: 30px;
 }
 
-.hero-btns {
-    display: flex;
-    gap: 15px;
-}
 
 .hero-image img {
     border-radius: 24px;
